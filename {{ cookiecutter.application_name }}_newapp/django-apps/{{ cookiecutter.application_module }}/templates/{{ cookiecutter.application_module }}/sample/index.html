@@ -1,0 +1,23 @@
+{% raw %}{% extends "base.html" %}
+{% load i18n %}
+
+{% block body-content %}
+    {% block app_content %}{% spaceless %}
+    <div class="sample-index">
+        <h2>{% trans "Samples" %}</h2>
+
+        <ul class="sample-list">
+            {% for sample in sample_list %}
+                <li>
+                    <a href="{{ sample.get_absolute_url }}">{{ sample.title }}</a>
+                </li>
+            {% empty %}
+                <li>{% trans "No samples yet." %}</li>
+            {% endfor %}
+        </ul>
+
+        {% include "pagination.html" %}
+    </div>
+    {% endspaceless %}{% endblock app_content %}
+{% endblock body-content %}
+{% endraw %}

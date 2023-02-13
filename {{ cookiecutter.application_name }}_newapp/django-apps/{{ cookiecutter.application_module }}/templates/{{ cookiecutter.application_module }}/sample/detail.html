@@ -1,0 +1,12 @@
+{% raw %}{% extends "base.html" %}
+{% load i18n %}
+
+{% block body-content %}
+    {% block app_content %}{% spaceless %}
+        <div class="sample-detail">
+            <h2>{{ sample_object.title }}</h2>
+            <p class="slug">{{ sample_object.title }}</p>
+        </div>
+    {% endspaceless %}{% endblock app_content %}
+{% endblock body-content %}
+{% endraw %}
