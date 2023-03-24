@@ -4,7 +4,7 @@
     "application_module": "{{ cookiecutter.application_name.replace('-', '_') }}",
     "application_class": "{{ cookiecutter.application_name.replace('-', ' ').title().replace(' ', '') }}",
 
-    "_bireli_newapp_version": "0.1.0",
+    "_bireli_newapp_version": "0.1.1",
 
     "_copy_without_render": []
 }

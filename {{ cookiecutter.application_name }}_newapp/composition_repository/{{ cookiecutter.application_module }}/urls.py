@@ -15,10 +15,10 @@ class {{ cookiecutter.application_class }}Urls(EnabledApplicationMarker):
         urlpatterns = super().load_urlpatterns(urlpatterns)
 
         if self.settings.ENABLE_I18N_URLS:
-            return urlpatterns + i18n_patterns(
+            return i18n_patterns(
                 path("{{ cookiecutter.application_name }}/", include("{{ cookiecutter.application_module }}.urls")),
-            )
+            ) + urlpatterns
         else:
-            return urlpatterns + [
+            return [
                 path("{{ cookiecutter.application_name }}/", include("{{ cookiecutter.application_module }}.urls")),
-            ]
+            ] + urlpatterns
